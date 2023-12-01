@@ -1,0 +1,265 @@
+body {
+  margin: 5px;
+  background-color: #000000;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 100px auto;
+  grid-gap: 10px;
+  background-color: #000000;
+}
+
+.box {
+  background-color: #444;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.box > a {
+  color: whitesmoke;
+  text-decoration: none;
+  font-size: 150%;
+}
+
+.subtitulo{
+  color: whitesmoke;
+  text-align: center;
+  grid-column: 1 / span 4;
+}
+
+
+.titular {
+  grid-column: 1 / span 4;
+  grid-row: 1;
+  text-align: center;
+  color: whitesmoke;
+}
+
+.titular > h1{
+  margin: 10px
+}
+
+nav > a{
+  padding: 10px;
+  font-size: small;
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+
+.imgpeli{
+  background-color: rgb(112, 106, 106);
+  border-radius: 2px;
+}
+
+.imgpeli > a > img:hover {
+  transform: scale(1.03);
+}
+
+.imgpeli > a > img {
+  object-fit: cover;
+  max-width:100%;
+  max-height: 100%;
+  transition: all 0.15s ease-in-out;
+}
+
+
+.imgpeli > p{
+  color: black;
+  text-align: left;
+  margin: 10px;
+}
+
+.imgpeli > a{
+  font-weight: bold;
+  color: whitesmoke;
+  font-size: 125%;
+  text-align: center;
+  text-decoration: none;
+}
+
+.imanormal{
+  object-fit: cover;
+  max-width:100%;
+  max-height: 100%;
+}
+
+
+.holder{
+  grid-column: 1 /span 4;
+  grid-row: 3;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #000000;
+  color: whitesmoke;
+}
+
+.holder > a{
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+.tc{
+  overflow-x: auto;
+  width: 100%;
+  grid-column: 1 /span 4;
+  grid-row: 3;
+}
+
+
+#footer {
+  grid-column: 1 / span 4;
+  grid-row: 4;
+  text-align: center;
+}
+
+footer > a{
+  padding: 10px;
+  font-size: small;
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: #ddd;
+}
+
+.socials img{
+  max-width: 30%;
+  margin: 10px;
+}
+
+.socials{
+  text-align: center;
+}
+
+/* Estilos para las celdas de la tabla */
+.table td, .table th {
+  border: 1px solid #ddd; /* Borde delgado entre celdas */
+  padding: 12px;
+  text-align: left;
+}
+
+/* Estilo de cabecera de la tabla */
+.table th {
+  background-color: #333; /* Fondo oscuro para el encabezado */
+  color: #fff; /* Texto blanco para el encabezado */
+}
+
+/* Estilo de las filas alternas (alternancia de colores) */
+.table tr:nth-child(even) {
+  background-color: #f9f9f9; /* Fondo gris claro para filas pares */
+}
+
+/* Hover sobre las filas de la tabla */
+.table tr:hover {
+  background-color: #f1f1f1; /* Fondo gris más claro al pasar el ratón */
+}
+
+/* Estilo para la primera columna (si es necesario) */
+.table td:first-child, .table th:first-child {
+  border-left: 0; /* Elimina el borde izquierdo de la primera columna */
+  background-color: #858585;
+}
+
+/* Estilo para la última columna (si es necesario) */
+.table td:last-child, .table th:last-child {
+  border-right: 0; /* Elimina el borde derecho de la última columna */
+}
+
+form {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #eee;
+  color: #000;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #333;
+}
+
+@media only screen and (min-width: 767px) {
+  .titular{
+    position: fixed;
+    width: 100%;
+    top: 0%;
+    z-index: 2;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .box.titular nav {
+    display: none; /* Inicialmente oculto */
+    background-color: #555;
+    position: absolute;
+    top: 80px; /* Altura de la barra de título */
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .box.titular nav a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .box.titular.active nav {
+    display: block;
+    z-index: 1000;
+  }
+
+  .holder{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+
+  .subtitulo{
+    color: whitesmoke;
+    text-align: center;
+    grid-column: 1 / span 4;
+    grid-row: 2;
+  }
+  
+}
